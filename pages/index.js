@@ -1,5 +1,6 @@
 import '../styles/index.scss'
+import Main from '../components/Main'
 
-const App = () => <div>Welcome to next.js!</div>
+const App = () => <main><Main /></main>
 
 export default App
