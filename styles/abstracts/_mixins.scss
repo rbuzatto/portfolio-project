@@ -1,4 +1,8 @@
 @mixin responsiveFor($breakpoint) {
+    @if unitless($breakpoint) {
+        @error '`#{$breakpoint}` must have valid unit for media queries';
+    }
+
     @media only screen and (min-width: #{$breakpoint}) {
         @content;
     }

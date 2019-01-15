@@ -1,7 +1,22 @@
-@import 'vendors/module';
-@import 'abstracts/module';
-@import 'base/module';
-@import 'components/module';
-@import 'layout/module';
-@import 'pages/module';
-@import 'themes/module';
+// vendors
+@import 'vendors/normalize';
+
+// abstracts
+@import 
+    'abstracts/variables',
+    'abstracts/functions',
+    'abstracts/mixins';
+
+//base    
+@import 
+    'base/base',
+    'base/typography';
+
+// components    
+
+// layout
+@import 
+    'layout/landing';
+
+// pages
+@import 'pages/main';
