@@ -1,0 +1,4 @@
+section:not(:first-of-type) {
+    @include container;
+    margin-top: 10rem;
+}
