@@ -9,6 +9,7 @@
 
 //base    
 @import 
+    'base/reset',
     'base/base',
     'base/typography';
 
@@ -16,6 +17,7 @@
 
 // layout
 @import 
+    'layout/header',
     'layout/landing',
     'layout/skills';
 

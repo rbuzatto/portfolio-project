@@ -1,6 +1,19 @@
 // COLORS
 $color-primary: hsl(94, 44%, 50%);
 
+$color-font: hsl(0, 0%, 10%);
+
+$font-nofocus: hsl(94, 44%, 30%);
+$font-highlight: hsl(0, 0%, 80%);
+
 // FONTS
+$font-sm: 1.2rem;
+$font-md: 1.6rem;
+$font-lg: 2.0rem;
+$font-xl: 2.4rem;
 
 // BREAKPOINTS
+
+// padding
+$pad-text: .4rem;
+$pad-wrapper: 1rem;

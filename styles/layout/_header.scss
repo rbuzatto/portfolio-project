@@ -1,0 +1,81 @@
+.header {
+    display: flex;
+    align-items: center;
+
+    &__nav {
+        z-index: 10;
+        background: $color-primary;
+        position: absolute;
+        top: 0;
+        display: flex;
+        align-items: center;
+        height: 5rem;
+        padding: $pad-wrapper;
+        width: 100%;
+        transform-origin: center bottom;
+    }
+
+    &__link {
+        padding: $pad-text;
+        font-size: $font-sm;
+        color: $font-nofocus;
+
+        &:hover {
+            color: $font-highlight;
+        }
+    }
+
+    &__menu-box {
+        z-index: 100;
+        cursor: pointer;
+        position: fixed;
+        top: 0;
+        right: 0;
+        padding: $pad-text;
+        height: 5rem;
+        display: flex;
+        align-items: center;
+    }
+
+    &__menu {
+        padding-right: $pad-text;
+        margin-left: auto;
+        position: relative;
+        &,
+        &::after,
+        &::before {
+            content: "";
+            height: 2px;
+            width: 2rem;
+            background: $color-font;
+        }
+
+        &::after {
+            position: absolute;
+            top: 5px;
+        }
+
+        &::before {
+            position: absolute;
+            bottom: 5px;
+        }
+    }
+}
+
+.nav-animation-enter {
+    transform: rotateX(-90deg) translateY(-100%);
+  }
+  
+  .nav-animation-enter.nav-animation-enter-active {
+    transform: rotateX(0deg) translateY(0);
+    transition: all 500ms ease-in;
+  }
+  
+  .nav-animation-leave {
+    transform: rotateX(0deg) translateY(0);
+  }
+  
+  .nav-animation-leave.nav-animation-leave-active {
+    transform: rotateX(-90deg) translateY(-100%);
+    transition: all 300ms ease-in;
+  }
