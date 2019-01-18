@@ -8,7 +8,7 @@ const App = () =>
     <div>
         <Head>	  
           <title>Rafael Portfolio</title>
-          <meta charset="utf-8"/>
+          <meta charSet="utf-8"/>
           <meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         </Head>
