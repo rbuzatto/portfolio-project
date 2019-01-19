@@ -1,9 +1,14 @@
 // COLORS
 $color-primary: hsl(94, 44%, 50%);
+$color-primary: hsl(179, 60%, 47%);
+$color-primary-dark: mix(black, $color-primary, 20%);
+$color-primary-darkest: mix(black, $color-primary, 40%);
+// @todo define better the palete
 
 $color-font: hsl(0, 0%, 10%);
 
 $font-nofocus: hsl(94, 44%, 30%);
+$font-nofocus: mix(black, $color-primary, 40%);
 $font-highlight: hsl(0, 0%, 80%);
 
 // FONTS
@@ -19,5 +24,6 @@ $pad-text: .4rem;
 $pad-wrapper: 1rem;
 
 // ANIMATIONS
-$transition-menu: all 300ms ease-in;
+$speed-animation: 500ms; // it must match Header.js speed
+$transition-menu: all $speed-animation linear;
 $header-height: 5rem;

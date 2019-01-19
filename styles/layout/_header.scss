@@ -3,31 +3,29 @@
     align-items: center;
 
     &__nav-box {
-        perspective: 800px;
-        z-index: 10;
-        position: fixed;
-        top: 0;
-        height: $header-height;
-        width: 100%;
+        perspective: 40px;
+        z-index    : 10;
+        position   : fixed;
+        top        : 0;
+        height     : $header-height;
+        width      : 100%;
+        background : $color-primary-darkest;
     }
 
     &__nav {
-        // z-index: 10;
-        // position: fixed;
-        // top: 0;
-        height: 100%;
-        width: 100%;
-        display: flex;
-        background: $color-primary;
+        height     : 100%;
+        width      : 100%;
+        display    : flex;
+        background : $color-primary;
         align-items: center;
-        padding: $pad-wrapper;
+        padding    : $pad-wrapper;
         transform-origin: center bottom;
     }
 
     &__link {
-        padding: $pad-text;
+        padding  : $pad-text;
         font-size: $font-sm;
-        color: $font-nofocus;
+        color    : $font-nofocus;
 
         &:hover {
             color: $font-highlight;
@@ -35,22 +33,21 @@
     }
 
     &__menu-box {
-        z-index: 10000;
-        cursor: pointer;
-        position: fixed;
-        top: calc((#{$header-height} - 0.2rem) / 2 );
-        transform: translateY(-50%);
-        right: calc((#{$header-height} - 0.2rem) / 2 );
-        // padding: $pad-text;
-        height: $header-height;
-        display: flex;
-        align-items: center;
+        z-index    : 10000;
+        cursor     : pointer;
+        position   : fixed;
+        top        : calc((#{$header-height} - 0.2rem) / 2 );
+        transform  : translateY(-50%);
+        right      : calc((#{$header-height} - 0.2rem) / 2 );
+        height     : $header-height;
+        display    : flex;
+        align-items: center;   
     }
 
     &__menu {
         padding-right: $pad-text;
-        margin-left: auto;
-        position: relative;
+        margin-left  : auto;
+        position     : relative;
         &,
         &::after,
         &::before {
@@ -58,7 +55,7 @@
             height: .2rem;
             width: 2rem;
             background: $color-font;
-            transition: transform .3s ease-out;
+            transition: transform $speed-animation ease-out;
         }
 
         &::after {
@@ -76,14 +73,19 @@
                 background: transparent;
             }
 
-            &::after {
+            &::after,
+            &::before {
                 top: 0;
+            }
+
+            &::after {
                 transform: rotate(135deg);
+                background: darken($font-highlight, 30%);
             }
 
             &::before {
-                top: 0;
                 transform: rotate(-135deg);
+                background: darken($font-highlight, 10%);
             }
         }
     }
@@ -91,11 +93,11 @@
 }
 
 .nav-animation-enter {
-    transform: translateY(-100%);
+    transform : translateY(-100%);
     transition: $transition-menu;
 
     & .header__nav {
-        transform: rotateX(90deg);
+        transform : rotateX(90deg);
         background: darken($color-primary, 20%);
     }
   }
@@ -104,18 +106,18 @@
     transform: translateY(0);
 
     & .header__nav {
-        transform: rotateX(0deg);
+        transform : rotateX(0deg);
         background: $color-primary;
         transition: $transition-menu;
     }
   }
   
   .nav-animation-leave {
-    transform: translateY(0);
+    transform : translateY(0);
     transition: $transition-menu;
 
     & .header__nav {
-        transform: rotateX(0deg) ;
+        transform : rotateX(0deg) ;
         background: $color-primary;
     }
   }
@@ -125,7 +127,7 @@
     transform: translateY(-100%);
 
     & .header__nav {
-        transform: rotateX(90deg);
+        transform : rotateX(90deg);
         background: darken($color-primary, 20%);
         transition: $transition-menu;
     }

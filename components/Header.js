@@ -11,8 +11,8 @@ class Header extends Component {
         <header className="header">
         <CSSTransitionGroup
           transitionName="nav-animation"
-          transitionEnterTimeout={300}
-          transitionLeaveTimeout={300}>
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={500}>
             {
                 menuOpen && (
                 <div className="header__nav-box">

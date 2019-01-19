@@ -17,7 +17,7 @@ body { box-sizing: border-box; }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #c5cc89; 
+  background: adjust-color($color-primary, $saturation: -30%, $lightness: 40%); 
 }
 
 /* Handle */
