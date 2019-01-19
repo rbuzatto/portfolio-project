@@ -58,6 +58,7 @@
             height: .2rem;
             width: 2rem;
             background: $color-font;
+            transition: transform .3s ease-out;
         }
 
         &::after {
@@ -69,7 +70,24 @@
             position: absolute;
             bottom: 5px;
         }
+
+        &--open {
+            & {
+                background: transparent;
+            }
+
+            &::after {
+                top: 0;
+                transform: rotate(135deg);
+            }
+
+            &::before {
+                top: 0;
+                transform: rotate(-135deg);
+            }
+        }
     }
+
 }
 
 .nav-animation-enter {

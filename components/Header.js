@@ -29,7 +29,7 @@ class Header extends Component {
         
             
             <div className="header__menu-box" onClick={this.props.displayMenu}>
-                <div className="header__menu"></div>
+                <div className={`header__menu ${ menuOpen ? 'header__menu--open' : ''}`}></div>
             </div>
         </header>
         )
