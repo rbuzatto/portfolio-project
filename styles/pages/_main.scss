@@ -2,3 +2,12 @@ section:not(:first-of-type) {
     @include container;
     margin-top: 10rem;
 }
+
+.main.main-animate {
+  transform: translateY($header-height);
+}
+
+.main {
+  transform: translateY(0);
+  transition: $transition-menu;
+}
