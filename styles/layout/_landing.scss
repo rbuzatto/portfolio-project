@@ -2,12 +2,61 @@
     height: 100vh;
     width: 100vw;
     position: relative;
-    padding: 4rem;
 
     &__title-area {
         position: absolute;
-        bottom: 0%;
-        right: 10%;
+        bottom: 20%;
+        right: 15%;
         text-transform: uppercase;
     }
+
+    &__subTitle {
+        margin-top: 1rem;
+        margin-left: .4rem;
+    }
+}
+
+.animate-letters {
+  display: inline-block;
+  position: relative;
+  text-align:center;
+  width: $widthEl;
+  height: 3rem;
+  -webkit-perspective: 50px;
+  -moz-perspective: 50px;
+  -o-perspective: 50px;
+  perspective: 50px;
+}
+
+@for $i from 1 through $elCount {
+  $timeDelay:calc(((#{$i} - 1)* #{$timeDelayPerElm}) + #{$initialTimeDelay});
+
+ .animate-letters:nth-of-type(#{$i}) .front-face {
+  animation:  flippin $timeSingleElm ease-out $timeDelay forwards;
+}
+  .animate-letters:nth-of-type(#{$i}) .back-face {
+  animation:  flippin $timeSingleElm ease-out $timeDelay forwards;
+}
+}
+
+// styling front and back
+.back-face,
+.front-face {
+  width: 100%;
+  position: absolute;
+  top:0;
+  left:0;
+  transform: rotateY(180deg);
+}
+
+.front-face {
+color: $color-grey-dark;
+}
+.back-face {
+  -webkit-backface-visibility: hidden;
+ backface-visibility: hidden;
+  position: absolute;
+  top:0;
+  left:0;
+  color: $color-primary;
 }

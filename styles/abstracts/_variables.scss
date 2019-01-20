@@ -5,6 +5,12 @@ $color-primary-dark: mix(black, $color-primary, 20%);
 $color-primary-darkest: mix(black, $color-primary, 40%);
 // @todo define better the palete
 
+$color-grey-light  : hsl(0, 0%, 80%);
+$color-grey-md     : hsl(0, 0%, 70%);
+$color-grey-dark   : hsl(0, 0%, 60%);
+$color-grey-darkest: hsl(0, 0%, 50%);
+
+// FONT COLORS
 $color-font: hsl(0, 0%, 10%);
 
 $font-nofocus: hsl(94, 44%, 30%);
@@ -24,6 +30,15 @@ $pad-text: .4rem;
 $pad-wrapper: 1rem;
 
 // ANIMATIONS
+
+// drop menu
 $speed-animation: 500ms; // it must match Header.js speed
 $transition-menu: all $speed-animation linear;
 $header-height: 5rem;
+
+// letter movement
+$elCount: 6;
+$widthEl: 25px;
+$timeSingleElm: 120ms;
+$timeDelayPerElm: 80ms;
+$initialTimeDelay: 800ms;
