@@ -1,14 +1,21 @@
 // COLORS
 $color-primary: hsl(94, 44%, 50%);
-$color-primary: hsl(179, 60%, 47%);
+$color-primary: hsl(179, 60%, 50%);
 $color-primary-dark: mix(black, $color-primary, 20%);
 $color-primary-darkest: mix(black, $color-primary, 40%);
 // @todo define better the palete
+$color-secondary: hsl(283, 60%, 50%);
+$color-secondary: hsl(34, 90%, 50%);
+$color-silver: hsl(203, 91%, 88%);
+$color-secondary-dark: mix(black, $color-secondary, 20%);
+$color-secondary-darkest: mix(black, $color-secondary, 40%);
 
 $color-grey-light  : hsl(0, 0%, 80%);
 $color-grey-md     : hsl(0, 0%, 70%);
 $color-grey-dark   : hsl(0, 0%, 60%);
 $color-grey-darkest: hsl(0, 0%, 50%);
+
+$radial-dark-blue: radial-gradient(circle, rgba(39,144,196,1) 0%, rgba(24,15,121,1) 100%);
 
 // FONT COLORS
 $color-font: hsl(0, 0%, 10%);

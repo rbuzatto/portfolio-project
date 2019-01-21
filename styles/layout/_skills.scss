@@ -48,7 +48,7 @@ $box-shadow-hover: 0 4px 8px hsl(181, 11%, 42%);
   height: $card-size;
   width: $card-size;
   box-shadow: $box-shadow;
-  background: radial-gradient(circle, rgba(39,144,196,1) 0%, rgba(24,15,121,1) 100%);
+  background: $radial-dark-blue;
   overflow: hidden;
   cursor: pointer;
   transition: all .3s;

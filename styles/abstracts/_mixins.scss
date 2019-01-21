@@ -12,3 +12,9 @@
     max-width: 85%;
     margin: 0 auto;
 }
+
+@mixin center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
