@@ -1,0 +1,52 @@
+$color-bgd: hsl(194, 62%, 50%);
+$letter-total: 7;
+$gap: 2rem;
+$slash-border: 4px;
+
+.btn {
+  position   : relative;
+  display    : flex;
+  // ratio below maintains a good proprortion with the text font size
+  width      : 1 * $font-md * $letter-total + 2 * $gap;
+  align-items: center;
+  cursor     : pointer;
+  
+  &--phantom {
+    height: 100%;
+  }
+}
+
+.btn__text {
+  text-transform: uppercase;
+  letter-spacing: .5rem;
+  font-size: $font-md;
+  position: absolute;
+  top: 50%;
+  left: $gap;
+//   talvez left seja melhor em rems/ px
+  transform: translate($slash-border, -50%);
+  
+  &--hidden {
+    color: white;
+    transform: translateY(-50%);
+  }
+}
+
+.btn__slash {
+    width: 1.5rem;
+    height: 3rem;
+    border-right: $slash-border solid $color-bgd;
+    border-left: $slash-border solid $color-bgd;
+    transform: skewX(-20deg);
+    overflow: hidden;
+    z-index: 1;
+    transition: width .2s;
+  
+  & > * {
+    transform: skewX(20deg);
+  }
+}
+
+.btn:hover .btn__slash {
+  animation: animateWidth .4s ease-out forwards;
+}

@@ -18,6 +18,15 @@ const Main = () => (
                 <h2 className="landing__subTitle">Full Stack Developer</h2>
             </div>
         </div>
+        
+        <div className="landing__cta btn">
+                <div className="btn__slash">
+                    <div className="btn btn--phantom">
+                        <span className="btn__text btn__text--hidden">Contact</span>
+                    </div>
+                </div>
+                <span className="btn__text">Contact</span>
+            </div>
     </section>
 )
 
