@@ -1,9 +1,8 @@
 const title = 'Rafael'
 const titleArr = title.split('')
 
-const Main = () => (
+const Landing = () => (
     <section className="landing">
-        <h1>landing Page here</h1>
         <div className="landing__title-area">
             <div className="landing__title">
                 {
@@ -30,4 +29,4 @@ const Main = () => (
     </section>
 )
 
-export default Main
+export default Landing

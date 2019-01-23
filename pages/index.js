@@ -1,7 +1,7 @@
 import '../styles/index.scss'
 import Head from 'next/head'
 import Header from '../components/Header'
-import Main from '../components/Main'
+import Landing from '../components/Landing'
 import About from '../components/About'
 import Skills from '../components/Skills'
 import Footer from '../components/Footer'
@@ -28,7 +28,7 @@ class App extends Component{
             </Head>
             <Header displayMenu={this.displayMenu} isMenuOpen={this.state.isMenuOpen} />
             <main className={`main ${this.state.isMenuOpen ? 'main-animate' : ''}`}>
-                <Main />
+                <Landing />
                 <About />
                 <Skills />
             </main>
