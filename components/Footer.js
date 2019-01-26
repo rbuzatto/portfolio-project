@@ -10,7 +10,6 @@ const Footer = props => {
                 <div className="footer__curtains footer__curtains--left">&#60;</div>
                 <div className="footer__welcome">Find me</div>
                 <div className="footer__contact">
-                    {/* <div className="footer__contact"> */}
                         { contactSvgs.map((path, idx) => {
                             return(<div key={idx} className="footer__icon">
                                 { path }
@@ -19,7 +18,6 @@ const Footer = props => {
                             }      
                         ) 
                         }
-                    {/* </div> */}
                 </div>
                 <div className="footer__curtains footer__curtains--right">&#47;&#62;</div>
             </div>    

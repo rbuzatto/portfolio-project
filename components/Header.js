@@ -2,10 +2,34 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { CSSTransitionGroup } from 'react-transition-group'
 
-class Header extends Component {
+import { Link } from 'react-scroll'
 
-    render() {
-        const { isMenuOpen } = this.props
+const links = [
+    {
+        name: 'Home',
+        target: 'landing'
+    },
+    {
+        name: 'About',
+        target: 'about'
+    },
+    {
+        name: 'Skills',
+        target: 'skills'
+    },
+    {
+        name: 'Contact',
+        target: 'footer'
+    },
+]
+
+const Header = ({ isMenuOpen, displayMenu }) => {
+
+    const renderLinks = (links) => {
+        return links.map((link, idx) => (  
+            <Link key={idx} className = "header__link" spy={true} smooth={true}  to={link.target}>{link.name}</Link>
+        ))
+    }
 
         return (
         <header className="header">
@@ -17,10 +41,9 @@ class Header extends Component {
                 isMenuOpen && (
                 <div className="header__nav-box">
                     <nav className="header__nav">
-                        <a className = "header__link"   href="">Home</a>
-                        <a className = "header__link"   href="">About</a>
-                        <a className = "header__link"   href="">Skills</a>
-                        <a className = "header__link"   href="">Contact</a>
+                        {
+                            renderLinks(links)
+                        }
                     </nav>
                 </div>
                 )
@@ -28,12 +51,11 @@ class Header extends Component {
         </CSSTransitionGroup>
         
             
-            <div className="header__menu-box" onClick={this.props.displayMenu}>
+            <div className="header__menu-box" onClick={displayMenu}>
                 <div className={`header__menu ${ isMenuOpen ? 'header__menu--open' : ''}`}></div>
             </div>
         </header>
         )
-    }
 }
 
 Header.propTypes = {
