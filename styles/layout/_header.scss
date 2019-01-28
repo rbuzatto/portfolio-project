@@ -26,6 +26,7 @@
         padding  : $pad-text;
         font-size: $font-sm;
         color    : $font-nofocus;
+        cursor   : pointer;
 
         &:hover {
             color: $font-highlight;

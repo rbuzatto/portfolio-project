@@ -1,0 +1,89 @@
+.about {
+    position: relative;
+    overflow: hidden;
+
+    &__intro {
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-height: 100%;
+        height: 60vh;
+        display: flex;
+        justify-content: center;
+        background-color: white;
+        align-items: center;
+        overflow: hidden;
+        transition: background-color .6s ease-in .3s;
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+
+    &__wrapper {
+        width: 100%;
+        height: 200%;
+        top: -65%;
+        position: absolute;
+        transform-origin: center center;
+        transform: rotate(-45deg);
+
+    }
+
+    &__title--left {
+        font-size: 4rem;
+        text-transform: uppercase;
+        justify-content: center;
+        align-items: flex-end;
+        transform-origin: left bottom;
+    }
+
+    &__title--right {
+        font-size: 3.4rem;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        align-items: center;
+        transform-origin: left top;
+    }
+
+    &__title {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        padding: 2rem;
+        transition: all .3s ease-in .2s;
+        transform: rotate(0deg);
+    }
+
+    &__line {
+        height: 1px;
+        width: 80%;
+        max-width: 24rem;
+        background: black;
+        margin: 0 auto;
+        transform: scale(1);
+        transition: all .3s ease-in;
+    }
+
+    &__intro:hover &__title--left {
+        transform: rotate(-45deg);
+        opacity: 0;
+    }
+
+    &__intro:hover &__title--right {
+        transform: rotate(45deg);
+        opacity: 0;
+    }
+
+    &__intro:hover &__line {
+        transform: scale(0);
+    }
+
+    &__title-bg-layout {
+        padding: .2rem .6rem;
+        background: hsl(96, 100%, 88%);
+    }
+
+}

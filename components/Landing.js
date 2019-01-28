@@ -14,8 +14,8 @@ const Landing = () => (
                         )
                     )
                 }
-                <h2 className="landing__subTitle">Full Stack Developer</h2>
             </div>
+                <h2 className="landing__subTitle">Full Stack Developer</h2>
         </div>
         
         <div className="landing__cta btn">

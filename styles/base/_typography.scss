@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Black+Ops+One');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:100');
 
 body {
     font-family: 'Montserrat', sans-serif;
@@ -8,4 +10,12 @@ p {
     font-size: 1.2rem;
     line-height: 1.5;
     margin: 2rem 0;
+}
+
+.about__title--left {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.about__title--right {
+    font-family: 'Black Ops One', cursive;
 }
