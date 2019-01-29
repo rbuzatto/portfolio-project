@@ -2,6 +2,10 @@
     position: relative;
     overflow: hidden;
 
+    @include responsiveFor($desktop-sm) {
+        display: flex;
+    }
+
     &__intro {
         z-index: 1;
         position: absolute;
@@ -17,8 +21,24 @@
         overflow: hidden;
         transition: background-color .6s ease-in .3s;
 
+        @include responsiveFor($desktop-sm) {
+            z-index: 0;
+            position: relative;
+            margin: 1rem;
+            width: auto;
+            height: 0;
+            align-items: start;
+            overflow: initial;
+        }
+
         &:hover {
             background-color: transparent;
+
+            @include responsiveFor($desktop-sm) {
+                background-color: white;
+                width: auto;
+                height: 0;
+            }
         }
     }
 
@@ -29,6 +49,14 @@
         position: absolute;
         transform-origin: center center;
         transform: rotate(-45deg);
+
+        @include responsiveFor($desktop-sm) {
+            position: relative;
+            top: 0%;
+            width: auto;
+            height: 20rem;
+            transform: rotate(-45deg);
+        }
 
     }
 
@@ -70,15 +98,28 @@
     &__intro:hover &__title--left {
         transform: rotate(-45deg);
         opacity: 0;
+
+        @include responsiveFor($desktop-sm) {
+            transform: rotate(0deg);
+            opacity: 1;
+        }
     }
 
     &__intro:hover &__title--right {
         transform: rotate(45deg);
         opacity: 0;
+        @include responsiveFor($desktop-sm) {
+            transform: rotate(0deg);
+            opacity: 1;
+        }
     }
 
     &__intro:hover &__line {
         transform: scale(0);
+
+        @include responsiveFor($desktop-sm) {
+            transform: scale(1);
+        }
     }
 
     &__title-bg-layout {
