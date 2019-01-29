@@ -11,6 +11,10 @@
 @mixin container {
     max-width: 85%;
     margin: 0 auto;
+
+    @include responsiveFor($desktop-lg) {
+        max-width: 1080px;
+    }
 }
 
 @mixin center {
