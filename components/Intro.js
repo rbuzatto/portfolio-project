@@ -18,7 +18,7 @@ const Intro = (props) => (
 Intro.propTypes = {
     firstText: PropTypes.string.isRequired,
     secondText: PropTypes.string.isRequired,
-    reverse: PropTypes.boolean,
+    reverse: PropTypes.bool,
     hue: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.number
