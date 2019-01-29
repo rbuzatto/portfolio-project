@@ -115,6 +115,13 @@
         opacity: 0;
 
         @include responsiveFor($tablet) {
+            transform: rotate(0deg);
+            opacity: 1;
+        }
+    }
+
+    &:hover &__wrapper--reverse &__title--right {
+        @include responsiveFor($tablet) {
             transform: rotate(180deg);
             opacity: 1;
         }

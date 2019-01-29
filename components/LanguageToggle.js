@@ -9,7 +9,7 @@ class LanguageToggle extends Component {
 
     handleOnChange = (e) => {
         e.persist()
-        this.setState(() => ({ language: e.target.value }))
+        this.setState(() => ({ language: e.target.value }), () => this.props.toggleLanguage(e))
     }
 
     render() {
@@ -29,7 +29,8 @@ class LanguageToggle extends Component {
 }
 
 LanguageToggle.propTypes = {
-    customClass:  PropTypes.string
+    customClass:  PropTypes.string,
+    toggleLanguage: PropTypes.func.required
 }
 
 export default LanguageToggle

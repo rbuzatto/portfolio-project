@@ -1,3 +1,5 @@
+import React, { Component } from 'react'
+
 import '../styles/index.scss'
 import Head from 'next/head'
 import Header from '../components/Header'
@@ -5,19 +7,28 @@ import Landing from '../components/Landing'
 import About from '../components/About'
 import Skills from '../components/Skills'
 import Footer from '../components/Footer'
+import lg  from './../data'
 
-import React, { Component } from 'react'
 
 class App extends Component{ 
     state = {
-        isMenuOpen: false
+        isMenuOpen: false,
+        lg: lg.en,
     }
     
+    toggleLanguage = (e) => {
+        e.persist()
+        this.setState(() => ({ lg: lg[e.target.value] }))
+    } 
+
     displayMenu = () => {
         this.setState(({ isMenuOpen }) => ({ isMenuOpen : !isMenuOpen }))
     }
 
     render() {
+
+        const { lg } = this.state
+
         return(
         <div>
             <Head>	  
@@ -28,8 +39,8 @@ class App extends Component{
             </Head>
             <Header displayMenu={this.displayMenu} isMenuOpen={this.state.isMenuOpen} />
             <main className={`main ${this.state.isMenuOpen ? 'main-animate' : ''}`}>
-                <Landing />
-                <About />
+                <Landing toggleLanguage={this.toggleLanguage} />
+                <About text={lg.about} />
                 <Skills />
             </main>
             <Footer isMenuOpen={this.state.isMenuOpen} />

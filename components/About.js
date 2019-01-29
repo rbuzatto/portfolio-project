@@ -1,14 +1,20 @@
+import PropTypes from 'prop-types'
+
 import Intro from './Intro'
 
-const About = () => (
+const About = ({text}) => (
     <section className="about">
-        <Intro firstText='About' secondText='me' hue='96' />
+        <Intro firstText={text.txt1} secondText={text.txt2} hue='96' />
         <div>
-            <p className="about__text">Hi there, my name is Rafael Buzatto de Campos. Once a Civil Engineer, other time a poker player, but now I&apos;m a fullstack developer! In frontend I have a background built up on React and Angular while at the backend in NodeJS. </p>
-            <p className="about__text">I started my journey studying Civil Engineer at Unicamp. Shortly after my graduation I started a new career as successfull professional poker player, where I&apos;ve spent over 10 years in a highly competitive arena playing against some of the toughest players in the world.</p>
-            <p className="about__text">For the last 2 years I switched for a new career at web development, where I found a great passion in it. Started with Java, then moved to Javascript where I learned these exciting tools, React and Angular. I also enjoy working with backend, being able to do authentications and fancy stuff.</p>
+            <p className="about__text">{text.p1}</p>
+            <p className="about__text">{text.p2}</p>
+            <p className="about__text">{text.p3}</p>
          </div>
     </section>
 )
+
+About.propTypes = {
+    text: PropTypes.object.required
+}
 
 export default About

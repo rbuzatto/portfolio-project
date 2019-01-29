@@ -1,11 +1,13 @@
+import PropTypes from 'prop-types'
+
 const title = 'Rafael'
 const titleArr = title.split('')
 
 import LanguageToggle from './LanguageToggle'
 
-const Landing = () => (
+const Landing = (props) => (
     <section className="landing">
-        <LanguageToggle customClass="landing__toggle-lg" />
+        <LanguageToggle customClass="landing__toggle-lg" toggleLanguage={props.toggleLanguage} />
         <div className="landing__title-area">
             <div className="landing__title">
                 {
@@ -31,5 +33,9 @@ const Landing = () => (
             </div>
     </section>
 )
+
+Landing.propTypes = {
+    toggleLanguage: PropTypes.func.required
+}
 
 export default Landing
