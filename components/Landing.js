@@ -1,8 +1,11 @@
 const title = 'Rafael'
 const titleArr = title.split('')
 
+import LanguageToggle from './LanguageToggle'
+
 const Landing = () => (
     <section className="landing">
+        <LanguageToggle customClass="landing__toggle-lg" />
         <div className="landing__title-area">
             <div className="landing__title">
                 {

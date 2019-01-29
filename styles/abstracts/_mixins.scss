@@ -22,3 +22,9 @@
     justify-content: center;
     align-items: center;
 }
+
+@mixin circle($d) {
+    width: $d;
+    height: $d;
+    border-radius: 50%;
+}

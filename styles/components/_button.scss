@@ -50,3 +50,48 @@ $slash-border: 4px;
 .btn:hover .btn__slash {
   animation: animateWidth .4s ease-out forwards;
 }
+
+.language {
+  display: flex;
+  align-items: center;
+  width: 10rem;
+  padding: 2rem;
+
+  &__disk {
+    background: gray;
+    @include circle(1rem);
+    transform: translateX(0);
+    transition: transform .1s ease-in;
+  }
+
+  &__box {
+    margin: 0 .4rem;
+    width: 2.5rem;
+    height: 1.4rem;
+    padding: .2rem;
+    border: 1px solid gray;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__option {
+    cursor: pointer;
+  }
+
+  &__radio[value="pt"]:checked ~ &__box &__disk {
+    transform: translateX(100%);
+  }
+
+  &__radio:checked + &__option {
+    color: $color-primary;
+  }
+
+  &__radio {
+    display: none;
+  }
+
+  &__option:last-of-type {
+    order: 1;
+  }
+}
