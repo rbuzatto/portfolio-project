@@ -14,7 +14,7 @@ const About = ({text}) => (
 )
 
 About.propTypes = {
-    text: PropTypes.object.required
+    text: PropTypes.object.isRequired
 }
 
 export default About

@@ -35,7 +35,7 @@ const Landing = (props) => (
 )
 
 Landing.propTypes = {
-    toggleLanguage: PropTypes.func.required
+    toggleLanguage: PropTypes.func.isRequired
 }
 
 export default Landing

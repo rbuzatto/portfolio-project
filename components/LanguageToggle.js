@@ -45,7 +45,7 @@ class LanguageToggle extends Component {
 
 LanguageToggle.propTypes = {
     customClass:  PropTypes.string,
-    toggleLanguage: PropTypes.func.required
+    toggleLanguage: PropTypes.func.isRequired
 }
 
 export default LanguageToggle
