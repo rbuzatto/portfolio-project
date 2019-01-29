@@ -9,7 +9,22 @@ class LanguageToggle extends Component {
 
     handleOnChange = (e) => {
         e.persist()
+        
         this.setState(() => ({ language: e.target.value }), () => this.props.toggleLanguage(e))
+    }
+
+    componentDidMount() {
+        const language = localStorage.getItem('lg')
+        if(language) {
+            this.setState(() => ({ language }))
+        }
+    }
+
+    
+    componentDidUpdate() {
+        if(typeof window === 'undefined') { return }
+        
+        localStorage.setItem('lg', this.state.language)
     }
 
     render() {

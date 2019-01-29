@@ -9,7 +9,6 @@ import Skills from '../components/Skills'
 import Footer from '../components/Footer'
 import lg  from './../data'
 
-
 class App extends Component{ 
     state = {
         isMenuOpen: false,
@@ -25,8 +24,15 @@ class App extends Component{
         this.setState(({ isMenuOpen }) => ({ isMenuOpen : !isMenuOpen }))
     }
 
-    render() {
+    componentDidMount() {
+        const language = localStorage.getItem('lg')
+        if(language) {
+            this.setState(() => ({lg: lg[language]}))
+        }
+    }
 
+
+    render() {
         const { lg } = this.state
 
         return(

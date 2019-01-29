@@ -31,5 +31,9 @@ module.exports = {
                                // You can also use `16.0`, `16.3`, etc, if you want to override the detected value.
           "flowVersion": "0.53" // Flow version
         }
+    },
+    "env": {
+        "browser": true,
+        "node": true
     }
-};
+}
