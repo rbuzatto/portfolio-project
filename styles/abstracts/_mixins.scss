@@ -12,7 +12,7 @@
     max-width: 85%;
     margin: 0 auto;
 
-    @include responsiveFor($desktop-lg) {
+    @include responsiveFor($desktop) {
         max-width: 1080px;
     }
 }

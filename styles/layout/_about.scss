@@ -2,7 +2,7 @@
     position: relative;
     overflow: hidden;
 
-    @include responsiveFor($desktop-sm) {
+    @include responsiveFor($tablet) {
         display: flex;
     }
 
@@ -21,7 +21,7 @@
         overflow: hidden;
         transition: background-color .6s ease-in .3s;
 
-        @include responsiveFor($desktop-sm) {
+        @include responsiveFor($tablet) {
             z-index: 0;
             position: relative;
             margin: 1rem;
@@ -34,7 +34,7 @@
         &:hover {
             background-color: transparent;
 
-            @include responsiveFor($desktop-sm) {
+            @include responsiveFor($tablet) {
                 background-color: white;
                 width: auto;
                 height: 0;
@@ -50,7 +50,7 @@
         transform-origin: center center;
         transform: rotate(-45deg);
 
-        @include responsiveFor($desktop-sm) {
+        @include responsiveFor($tablet) {
             position: relative;
             top: 0%;
             width: auto;
@@ -99,7 +99,7 @@
         transform: rotate(-45deg);
         opacity: 0;
 
-        @include responsiveFor($desktop-sm) {
+        @include responsiveFor($tablet) {
             transform: rotate(0deg);
             opacity: 1;
         }
@@ -108,7 +108,7 @@
     &__intro:hover &__title--right {
         transform: rotate(45deg);
         opacity: 0;
-        @include responsiveFor($desktop-sm) {
+        @include responsiveFor($tablet) {
             transform: rotate(0deg);
             opacity: 1;
         }
@@ -117,7 +117,7 @@
     &__intro:hover &__line {
         transform: scale(0);
 
-        @include responsiveFor($desktop-sm) {
+        @include responsiveFor($tablet) {
             transform: scale(1);
         }
     }

@@ -1,15 +1,15 @@
 html { 
   font-size:62.5%;
 
-  @include responsiveFor($tablet) {
+  @include responsiveFor($mobile-lg) {
     font-size:70%;
   }
 
-  @include responsiveFor($desktop-sm) {
+  @include responsiveFor($tablet) {
     font-size:80%;
   }
 
-  @include responsiveFor($desktop-lg) {
+  @include responsiveFor($desktop) {
     font-size:90%;
   }
 }
