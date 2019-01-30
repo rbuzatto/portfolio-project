@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 
+import Stripes from './Stripes'
 
 
 import LanguageToggle from './LanguageToggle'
@@ -11,6 +12,7 @@ const Landing = ({toggleLanguage, text}) => {
     return (
         <section className="landing">
             <LanguageToggle customClass="landing__toggle-lg" toggleLanguage={toggleLanguage} />
+            <Stripes />
             <div className="landing__title-area">
                 <div className="landing__title">
                     {

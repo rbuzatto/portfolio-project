@@ -31,6 +31,7 @@ $delay-to-step-4: $delay-to-step-3 + $time-step-three;
         width          : 10rem;
         white-space    : nowrap;
         overflow       : hidden;
+        cursor         : pointer;
         transition     : width $time-step-one;
         
       }
