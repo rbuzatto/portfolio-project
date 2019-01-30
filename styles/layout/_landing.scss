@@ -15,29 +15,11 @@
 
     &::before {
         background-image:
-        url('/static/img/train.jpg');
+        url('/static/img/man_on-wall.jpg');
         background-size      : cover;
         background-position  : center;
         background-repeat    : no-repeat;
         background-attachment: fixed;
-    }
-
-    &::after {
-      background: linear-gradient(
-        115deg,
-        rgba(32, 32, 32, .7) ,
-        rgba(68, 68, 68, .7) 50%,
-        rgba(mix(white, $color-primary-darkest, 50%), .9) 70%,
-        rgba(mix(white, $color-primary-darkest, 80%), 1)
-        );
-        background: linear-gradient(
-        115deg,
-        rgba(32, 32, 32, .7) ,
-        rgba(68, 68, 68, .7) 40%,
-        rgba(182, 182, 182, 0.95) 65%,
-        rgba(230, 230, 230, 0.95) 100%,
-        );
-      z-index: -4;
     }
 
     &__title-area {
