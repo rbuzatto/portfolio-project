@@ -47,9 +47,9 @@ class App extends Component{
             <main className={`main ${this.state.isMenuOpen ? 'main-animate' : ''}`}>
                 <Landing toggleLanguage={this.toggleLanguage} />
                 <About text={lg.about} />
-                <Skills />
+                <Skills text={lg.skills}/>
             </main>
-            <Footer isMenuOpen={this.state.isMenuOpen} />
+            <Footer text={lg.footer} isMenuOpen={this.state.isMenuOpen} />
         </div>
         )
     }

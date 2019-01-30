@@ -8,6 +8,10 @@ section:not(:first-of-type) {
     @include responsiveFor($tablet) {
         display: flex;
         justify-content: space-between;
+        // min-height to guarantee the intro to be shown
+        // overflow removed in order to avoid using margin left | right for intro
+        min-height: 300px;
+        overflow: initial;
     }
 }
 

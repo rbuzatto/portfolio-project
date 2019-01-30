@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 import Intro from './Intro'
 
 const inlineStyleDefault = {
@@ -12,9 +14,9 @@ const inlineStyle50px = {
 
 import { frontend, backend } from '../icons/paths'
 
-const Skills = () => (
+const Skills = ({text}) => (
     <section className="skills">
-        <Intro firstText='Skills' secondText='my' reverse={true} hue='210' />
+        <Intro firstText={text.txt1} secondText={text.txt2} reverse={true} hue='210' />
         <div>
             <h2 className="skills__title">What Do I Know?</h2>
             <p className="skills__text">I have some knowledge about some stuff. These stuff are fun.</p>
@@ -50,5 +52,9 @@ const Skills = () => (
 
     </section>
 )
+
+Skills.propTypes = {
+    text: PropTypes.object.isRequired
+}
 
 export default Skills

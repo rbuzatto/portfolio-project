@@ -103,11 +103,11 @@ $delay-to-step-4: $delay-to-step-3 + $time-step-three;
     }
   
   &:nth-child(2n) {
-    transform: translateY(-100%);
+    transform: translateY(-120%);
   }
   
   &:nth-child(2n - 1) {
-    transform: translateY(100%);
+    transform: translateY(120%);
   }
 }
 
