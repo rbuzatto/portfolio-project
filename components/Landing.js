@@ -7,7 +7,14 @@ import LanguageToggle from './LanguageToggle'
 
 const Landing = ({toggleLanguage, text}) => {
 
-    const titleArr = text.name.split('')
+    const renderName = (name) => (
+        name.split('').map((letter, idx) => (
+            <div className="animate-letters" key={idx}>
+                <h1 className="front-face">{letter}</h1>
+                <h1 className="back-face">{letter}</h1>
+            </div>
+            )
+        ))
 
     return (
         <section className="landing">
@@ -16,26 +23,20 @@ const Landing = ({toggleLanguage, text}) => {
             <div className="landing__title-area">
                 <div className="landing__title">
                     {
-                        titleArr.map((letter, idx) => (
-                            <div className="animate-letters" key={idx}>
-                                <h1 className="front-face">{letter}</h1>
-                                <h1 className="back-face">{letter}</h1>
-                            </div>
-                            )
-                        )
+                        renderName(text.name)
                     }
                 </div>
-                    <h2 className="landing__subTitle">{text.subtitle}</h2>
+                <h2 className="landing__subTitle">{text.subtitle}</h2>
             </div>
             
             <div className="landing__cta btn">
-                    <div className="btn__slash">
-                        <div className="btn btn--phantom">
+                <div className="btn__slash">
+                    <div className="btn btn--phantom">
                             <span className="btn__text btn__text--hidden">{text.cta}</span>
-                        </div>
                     </div>
-                    <span className="btn__text">{text.cta}</span>
                 </div>
+                <span className="btn__text">{text.cta}</span>
+            </div>
         </section>
     )
 }
