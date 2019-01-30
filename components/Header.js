@@ -1,29 +1,31 @@
-import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { CSSTransitionGroup } from 'react-transition-group'
 
 import { Link } from 'react-scroll'
 
-const links = [
-    {
-        name: 'Home',
-        target: 'landing'
-    },
-    {
-        name: 'About',
-        target: 'about'
-    },
-    {
-        name: 'Skills',
-        target: 'skills'
-    },
-    {
-        name: 'Contact',
-        target: 'footer'
-    },
-]
 
-const Header = ({ isMenuOpen, displayMenu }) => {
+
+const Header = ({ isMenuOpen, displayMenu, text }) => {
+    const { links: linkNames } = text
+
+    const links = [
+        {
+            name: linkNames[0],
+            target: 'landing'
+        },
+        {
+            name: linkNames[1],
+            target: 'about'
+        },
+        {
+            name: linkNames[2],
+            target: 'skills'
+        },
+        {
+            name: linkNames[3],
+            target: 'footer'
+        },
+    ]
 
     const renderLinks = (links) => {
         return links.map((link, idx) => (  
@@ -61,6 +63,7 @@ const Header = ({ isMenuOpen, displayMenu }) => {
 Header.propTypes = {
     isMenuOpen: PropTypes.bool.isRequired,
     displayMenu: PropTypes.func.isRequired,
+    text: PropTypes.object.isRequired
 }
 
 export default Header

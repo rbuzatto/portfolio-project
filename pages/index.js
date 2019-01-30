@@ -43,9 +43,9 @@ class App extends Component{
             <meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             </Head>
-            <Header displayMenu={this.displayMenu} isMenuOpen={this.state.isMenuOpen} />
+            <Header displayMenu={this.displayMenu} isMenuOpen={this.state.isMenuOpen} text={lg.header} />
             <main className={`main ${this.state.isMenuOpen ? 'main-animate' : ''}`}>
-                <Landing toggleLanguage={this.toggleLanguage} />
+                <Landing toggleLanguage={this.toggleLanguage} text={lg.landing} />
                 <About text={lg.about} />
                 <Skills text={lg.skills}/>
             </main>

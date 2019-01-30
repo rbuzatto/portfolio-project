@@ -1,4 +1,12 @@
 const en = {
+    'header': {
+        links: ['Home', 'About', 'Skills', 'Contact']
+    },
+    'landing': {
+        name: 'Rafael',
+        subtitle: 'FullStack Developer',
+        cta: 'Contact'
+    },
     'about': {
         txt1: 'About',
         txt2: 'me',
@@ -16,6 +24,14 @@ const en = {
 }
 
 const pt = {
+    'header': {
+        links: ['Home', 'Sobre', 'Estudos', 'Contato']
+    },
+    'landing': {
+        name: 'Rafael',
+        subtitle: 'Desenvolvedor FullStack',
+        cta: 'Contato'
+    },
     'about': {
         txt1: 'Sobre',
         txt2: 'Mim',
