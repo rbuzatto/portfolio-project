@@ -19,14 +19,16 @@
   .stroke__line {
     stroke-width: 1rem;
     fill:none;
-    transition: all .4s ease-in .2s;
-  }
-  
-  svg.stripes:hover .stroke__line {
-    stroke-dashoffset: 0 !important;
+    animation: stripesMoves .4s ease-in .2s forwards;
   }
 
   .stripes {
       position: absolute;
       z-index: -1;
+  }
+
+  @keyframes stripesMoves {
+    to {
+      stroke-dashoffset: 0;
+    }
   }
