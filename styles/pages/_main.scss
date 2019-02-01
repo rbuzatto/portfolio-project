@@ -5,7 +5,7 @@ section:not(:first-of-type) {
     position: relative;
     overflow: hidden;
     // min-height to guarantee the intro to be shown
-    min-height: 300px;
+    min-height: 400px;
 
     @include responsiveFor($tablet) {
         display: flex;
