@@ -18,6 +18,10 @@ const en = {
         txt1: 'Skills',
         txt2: 'My'
     },
+    'projects': {
+        txt1: 'Projects',
+        txt2: 'My'
+    },
     'footer': {
         txt: 'Find me',
     }
@@ -42,6 +46,10 @@ const pt = {
     },
     'skills': {
         txt1: 'Estudos',
+        txt2: 'Meus'
+    },
+    'projects': {
+        txt1: 'Projetos',
         txt2: 'Meus'
     },
     'footer': {

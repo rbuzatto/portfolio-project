@@ -4,7 +4,6 @@ import { CSSTransitionGroup } from 'react-transition-group'
 import { Link } from 'react-scroll'
 
 
-
 const Header = ({ isMenuOpen, displayMenu, text }) => {
     const { links: linkNames } = text
 
@@ -35,22 +34,22 @@ const Header = ({ isMenuOpen, displayMenu, text }) => {
 
         return (
         <header className="header">
-        <CSSTransitionGroup
-          transitionName="nav-animation"
-          transitionEnterTimeout={500}
-          transitionLeaveTimeout={500}>
-            {
-                isMenuOpen && (
-                <div className="header__nav-box">
-                    <nav className="header__nav">
-                        {
-                            renderLinks(links)
-                        }
-                    </nav>
-                </div>
-                )
-            }
-        </CSSTransitionGroup>
+            <CSSTransitionGroup
+            transitionName="nav-animation"
+            transitionEnterTimeout={500}
+            transitionLeaveTimeout={500}>
+                {
+                    isMenuOpen && (
+                    <div className="header__nav-box">
+                        <nav className="header__nav">
+                            {
+                                renderLinks(links)
+                            }
+                        </nav>
+                    </div>
+                    )
+                }
+            </CSSTransitionGroup>
         
             
             <div className="header__menu-box" onClick={displayMenu}>

@@ -6,6 +6,7 @@ import Header from '../components/Header'
 import Landing from '../components/Landing'
 import About from '../components/About'
 import Skills from '../components/Skills'
+import Projects from '../components/Projects'
 import Footer from '../components/Footer'
 import lg  from './../data'
 
@@ -48,6 +49,7 @@ class App extends Component{
                 <Landing toggleLanguage={this.toggleLanguage} text={lg.landing} />
                 <About text={lg.about} />
                 <Skills text={lg.skills}/>
+                <Projects text={lg.projects}/>
             </main>
             <Footer text={lg.footer} isMenuOpen={this.state.isMenuOpen} />
         </div>

@@ -13,9 +13,9 @@ $delay-to-step-3: $delay-to-step-2 + $time-step-two;
 $delay-to-step-4: $delay-to-step-3 + $time-step-three;
 
 .footer {
-    margin-top: 10rem;
+    margin-top: 4rem;
     width: 100vw;
-    height: 35vh;
+    height: 25vh;
 
     @include center;
     overflow: hidden;
