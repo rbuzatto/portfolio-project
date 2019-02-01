@@ -11,7 +11,7 @@ section:not(:first-of-type) {
         display: flex;
         justify-content: space-between;
         // overflow removed in order to avoid using margin left | right for intro
-        overflow: initial;
+        overflow: visible;
     }
 }
 

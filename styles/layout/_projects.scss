@@ -17,11 +17,21 @@
 
     &__img-box {
         display: block;
-        width: 25rem;
-        height: 15rem;
+        width: 20rem;
+        height: 10rem;
         overflow: hidden;      
         box-shadow: 2px 2px 2px $color-grey-dark;
         transition: all .25s ease-in;
+
+        @include responsiveForRange($tablet, $tablet-lg) {
+            width: 18rem;
+            height: 12rem;
+        }
+
+        @include responsiveFor($tablet-lg) {
+            width: 25rem;
+            height: 15rem;
+          }
 
         &:hover {        
             transform: translateY(-3px); 

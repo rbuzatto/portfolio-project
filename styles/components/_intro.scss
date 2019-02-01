@@ -35,7 +35,6 @@
 
 
     &__wrapper {
-        width           : 100%;
         height          : 200%;
         top             : -65%;
         position        : absolute;
@@ -109,6 +108,10 @@
         padding   : 2rem;
         transition: all .3s ease-in .2s;
         transform : rotate(0deg);
+
+        @include responsiveForRange($tablet, $tablet-lg) {
+            padding   : 1rem;
+        }
     }
 
     &__line {

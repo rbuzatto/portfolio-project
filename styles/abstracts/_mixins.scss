@@ -8,6 +8,16 @@
     }
 }
 
+@mixin responsiveForRange($min, $max) {
+    @if unitless($min) or unitless($max)  {
+        @error '`#{$min}` and `#{$max}` must have valid unit for media queries';
+    }
+
+    @media only screen and (min-width: #{$min}) and (max-width: #{$max}) {
+        @content;
+    }
+}
+
 @mixin container {
     max-width: 85%;
     margin: 0 auto;

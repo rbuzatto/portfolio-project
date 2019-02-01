@@ -1,7 +1,8 @@
 const Stripes = () => (
     <svg width="100%" height="100%" className="stripes" 
         viewBox="0 0 300 300"
-        preserveAspectRatio="none">
+        preserveAspectRatio="none"
+        >
     <polyline points="0,200 150,200 200,90 300,90"
                 id="line--1"
                 className="stroke__line"

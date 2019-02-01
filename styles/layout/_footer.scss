@@ -1,13 +1,17 @@
+// icons elms is to set the forloop properly (see bottom file)
 $icons-elms: 3;
 
 $row-icons-width: 18rem;
-$width-box-icon: 4rem;
+$height-box-icon: 4rem;
 
-$time-step-one: 0.3s;
-$time-step-two: 0.3s;
+// animations here occur one after the other
+// time-step refers to duration of each step
+$time-step-one  : 0.3s;
+$time-step-two  : 0.3s;
 $time-step-three: 0.2s;
-$time-step-four: 0.3s;
+$time-step-four : 0.3s;
 
+// delay to step tells when that animation should begin
 $delay-to-step-2: $time-step-one;
 $delay-to-step-3: $delay-to-step-2 + $time-step-two;
 $delay-to-step-4: $delay-to-step-3 + $time-step-three;
@@ -27,7 +31,7 @@ $delay-to-step-4: $delay-to-step-3 + $time-step-three;
         align-items    : center;
         font-size      : 2rem;
         color          : $color-secondary;
-        height         : 10rem;
+        height         : 4rem;
         width          : 10rem;
         white-space    : nowrap;
         overflow       : hidden;
@@ -37,11 +41,11 @@ $delay-to-step-4: $delay-to-step-3 + $time-step-three;
       }
 
       &__curtains {
-        color: $color-secondary;
+        color      : $color-secondary;
         font-weight: 700;
-        font-size: $font-xl;
-        height: 10rem;
-        transform: rotate(00deg);
+        font-size  : $font-xl;
+        height     : 10rem;
+        transform  : rotate(0deg);
 
         @include center;
       
@@ -75,13 +79,13 @@ $delay-to-step-4: $delay-to-step-3 + $time-step-three;
 }
 
 .footer__contact {
-  width: 0;
-  height: 0;
-  height: $width-box-icon;
-  display: flex;
-  align-items: center;
+  width          : 0;
+  height         : 0;
+  height         : $height-box-icon;
+  display        : flex;
+  align-items    : center;
   justify-content: space-evenly;
-  overflow: hidden;
+  overflow       :  hidden;
 }
 
 .footer__content {
@@ -96,12 +100,12 @@ $delay-to-step-4: $delay-to-step-3 + $time-step-three;
   cursor:pointer;
 
   & svg path {      
-    fill: black;
+    fill: rgb(21, 45, 68);
   }
 
   & svg:hover path {
-      fill: $color-secondary-darkest;
-    }
+      fill: rgb(42, 118, 189);
+  }
   
   &:nth-child(2n) {
     transform: translateY(-120%);
@@ -112,17 +116,15 @@ $delay-to-step-4: $delay-to-step-3 + $time-step-three;
   }
 }
 
-.footer__contact:hover svg:not(:hover) path {
-    fill: $color-silver;
-}
-
 .footer__content-box:hover .footer__icon {
     transform: translateY(0);
     opacity: 1;
 }
 
+// this for loop is for icons animation. it adds a delay between then
 @for $i from 1 through $icons-elms {
   $total-delay: calc(#{$delay-to-step-4} + (#{$i} -1) * .1s);
+  
   .footer__content-box:hover .footer__icon:nth-child(#{$i}) {
   transition: transform $time-step-four ease-in $total-delay;
   }
