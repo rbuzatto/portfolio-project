@@ -6,10 +6,13 @@
     position: relative;
     z-index : -3;
 
-    @include responsiveFor($tablet) {
-      height  : 80vh;
+    @include responsiveFor($mobile-lg) {
+      height  : 75vh;
     }
 
+    @include responsiveFor($tablet) {
+      height  : 85vh;
+    }
 
     @include responsiveFor($desktop) {
       height  : 100vh;
@@ -34,10 +37,16 @@
 
     &__title-area {
         position      : absolute;
-        bottom        : 20%;
-        right         : 10%;
+        bottom        : 5%;
+        right         : 8%;
         text-transform: uppercase;
+        
+        @include responsiveFor($desktop) {
+          bottom        : 10%;
+          right         : 8%;
+        }
     }
+
 
     &__subTitle {
         margin-top: 1rem;
