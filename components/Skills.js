@@ -1,17 +1,19 @@
 import PropTypes from 'prop-types'
 
 import Intro from './Intro'
+import { renderParagraphs } from '../utils/utils'
 
 import { frontend, backend } from '../icons/paths'
 
 const Skills = ({text}) => {
-    const { intro } = text
+    const { intro, paragraphs } = text
+
     return (
         <section className="skills">
             <Intro {...intro} reverse={true} hue='210' />
             <div>
                 <h2 className="skills__title">What Do I Know?</h2>
-                <p className="skills__text">I have some knowledge about some stuff. These stuff are fun.</p>
+                { renderParagraphs(paragraphs, 'skills__text') }
                 
                     <div className="area">
                         <input type="radio" name="area" id="frontend" value="frontend" className="area__option" defaultChecked />

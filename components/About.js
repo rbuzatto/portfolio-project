@@ -1,16 +1,15 @@
 import PropTypes from 'prop-types'
 
 import Intro from './Intro'
+import { renderParagraphs } from '../utils/utils'
 
 const About = ({text}) => {
-    const { intro } = text
+    const { intro, paragraphs } = text
     return (
         <section className="about">
             <Intro {...intro} hue='96' />
             <div>
-                <p className="about__text">{text.p1}</p>
-                <p className="about__text">{text.p2}</p>
-                <p className="about__text">{text.p3}</p>
+                { renderParagraphs(paragraphs, 'about__text') }
             </div>
         </section>
     )   
