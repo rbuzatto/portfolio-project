@@ -5,12 +5,12 @@ import { renderParagraphs } from '../utils/utils'
 
 import { frontend, backend } from '../icons/paths'
 
-const Skills = ({text}) => {
+const Skills = ({text, isIntroOpen}) => {
     const { intro, paragraphs } = text
 
     return (
         <section className="skills">
-            <Intro {...intro} reverse={true} hue='210' />
+            <Intro {...intro} reverse={true} open={isIntroOpen} hue='210' />
             <div>
                 <h2 className="skills__title">What Do I Know?</h2>
                 { renderParagraphs(paragraphs, 'skills__text') }
@@ -48,7 +48,12 @@ const Skills = ({text}) => {
     )
 }
 Skills.propTypes = {
-    text: PropTypes.object.isRequired
+    text: PropTypes.object.isRequired,
+    isIntroOpen: PropTypes.bool
+}
+
+Skills.defaultProps = {
+    isIntroOpen: false
 }
 
 export default Skills

@@ -14,6 +14,8 @@ class App extends Component{
     state = {
         isMenuOpen: false,
         lg: lg.en,
+        indexOfIntroOpened : -1,
+        windowSmaller620px: false
     }
     
     toggleLanguage = (e) => {
@@ -30,6 +32,65 @@ class App extends Component{
         if(language) {
             this.setState(() => ({lg: lg[language]}))
         }
+
+        window.onload = () => {
+
+            if(window.innerWidth < 620) {
+                this.trackScrollToSetOpenIntroBox()
+            }
+            //todo: window resize!!
+            window.addEventListener('resize', () => {
+                if(window.innerWidth < 620 && !this.state.windowSmaller620px) {
+                    this.trackScrollToSetOpenIntroBox()
+                }
+
+                if(window.innerWidth >= 620 && this.state.windowSmaller620px) {
+                    this.trackScrollToSetOpenIntroBox(false)
+                }
+
+            })
+        }
+    }
+
+    trackScrollToSetOpenIntroBox = (track = true) => {
+        const intros = [...document.querySelectorAll('.intro')]
+        const mapScrollYs = intros.map(intro => {
+            return {
+                top: intro.getBoundingClientRect().top + window.scrollY,
+                bottom: intro.getBoundingClientRect().bottom + window.scrollY,                    
+            }
+        
+        })
+        this.setIndexOfIntroOpened(mapScrollYs)
+
+        //bellow it is for setting a named function so it is removable from listener event
+        const that = this
+        function setIndex() {
+            const intros = [...document.querySelectorAll('.intro')]
+            const mapScrollYs = intros.map(intro => {
+            return {
+                top: intro.getBoundingClientRect().top + window.scrollY,
+                bottom: intro.getBoundingClientRect().bottom + window.scrollY,                    
+                }
+        
+            })
+            that.setIndexOfIntroOpened.call(that, mapScrollYs)
+        }
+
+        if(!track) {
+            window.removeEventListener('scroll', setIndex)
+            this.setState(() => ({windowSmaller620px : false}))
+        } else {
+            window.addEventListener('scroll', setIndex)
+            this.setState(() => ({windowSmaller620px : true}))
+        }
+    }
+
+    setIndexOfIntroOpened = (mapScrollYs) => {
+        const openIntroIndex = mapScrollYs.findIndex(scrollY => window.scrollY > scrollY.top - window.innerHeight/2 && window.scrollY < scrollY.bottom - window.innerHeight/2)
+        if (openIntroIndex !== this.state.indexOfIntroOpened ) {
+            this.setState(() => ({ indexOfIntroOpened: openIntroIndex }))
+        }
     }
 
 
@@ -44,12 +105,25 @@ class App extends Component{
             <meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             </Head>
-            <Header displayMenu={this.displayMenu} isMenuOpen={this.state.isMenuOpen} text={lg.header} />
+            <Header 
+                displayMenu={this.displayMenu} 
+                isMenuOpen={this.state.isMenuOpen} 
+                text={lg.header} />
+
             <main className={`main ${this.state.isMenuOpen ? 'main-animate' : ''}`}>
                 <Landing toggleLanguage={this.toggleLanguage} text={lg.landing} />
-                <About text={lg.about} />
-                <Skills text={lg.skills}/>
-                <Projects text={lg.projects}/>
+                <About      
+                    text = {lg.about}
+                    isIntroOpen={this.state.indexOfIntroOpened === 0}
+                 />
+                <Skills     
+                    text = {lg.skills}
+                    isIntroOpen={this.state.indexOfIntroOpened === 1}
+                />
+                <Projects   
+                    text = {lg.projects}
+                    isIntroOpen={this.state.indexOfIntroOpened === 2}
+                />
             </main>
             <Footer text={lg.footer} isMenuOpen={this.state.isMenuOpen} />
         </div>

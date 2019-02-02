@@ -2,12 +2,12 @@ import PropTypes from 'prop-types'
 
 import Intro from './Intro'
 
-const Projects = ({text}) => {
+const Projects = ({text, isIntroOpen}) => {
     const { intro, cases } = text
     
     return (
         <section className="projects">
-            <Intro {...intro} />
+            <Intro {...intro} open={isIntroOpen} />
             <ul className="projects__group">
             <li className="projects__case">
                 <a  className="projects__link"
@@ -27,8 +27,12 @@ const Projects = ({text}) => {
 }
 
 Projects.propTypes = {
-    text: PropTypes.object.isRequired
+    text: PropTypes.object.isRequired,
+    isIntroOpen: PropTypes.bool
 }
 
+Projects.defaultProps = {
+    isIntroOpen: false
+}
 
 export default Projects

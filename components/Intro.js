@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 
 const Intro = (props) => (
-    <div className="intro">
+    <div className={`intro ${props.open ? 'intro--open' : ''}`}>
             <div className={`intro__wrapper ${props.reverse? 'intro__wrapper--reverse' : ''}`}>
                 <div className="intro__title intro__title--left">
                     <span 
@@ -19,6 +19,7 @@ Intro.propTypes = {
     firstText: PropTypes.string.isRequired,
     secondText: PropTypes.string.isRequired,
     reverse: PropTypes.bool,
+    open: PropTypes.bool,
     hue: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.number
@@ -27,6 +28,7 @@ Intro.propTypes = {
 
 Intro.defaultProps = {
     reverse: false,
+    open: false,
     hue: 0
 }
 

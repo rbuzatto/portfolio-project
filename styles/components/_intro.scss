@@ -23,7 +23,7 @@
         overflow   : initial;
     }
 
-    &:hover {
+    &--open {
         background-color: transparent;
 
         @include responsiveFor($tablet) {
@@ -147,7 +147,14 @@
         transition: all .3s ease-in;
     }
 
-    &:hover &__title--left {
+    &__title-bg-layout {
+        padding   : .3rem .6rem;
+        background: hsl(96, 100%, 88%);
+        
+    }
+
+    // below is checking scroll
+    &--open &__title--left {
         transform: rotate(-45deg);
         opacity: 0;
 
@@ -157,7 +164,7 @@
         }
     }
 
-    &:hover &__title--right {
+    &--open &__title--right {
         transform: rotate(45deg);
         opacity: 0;
 
@@ -167,25 +174,19 @@
         }
     }
 
-    &:hover &__wrapper--reverse &__title--right {
+    &--open &__wrapper--reverse &__title--right {
         @include responsiveFor($tablet) {
             transform: rotate(180deg);
             opacity: 1;
         }
     }
 
-    &:hover &__line {
+    &--open &__line {
         transform: scale(0);
 
         @include responsiveFor($tablet) {
             transform: scale(1);
         }
-    }
-
-    &__title-bg-layout {
-        padding   : .3rem .6rem;
-        background: hsl(96, 100%, 88%);
-        
     }
 
 }
