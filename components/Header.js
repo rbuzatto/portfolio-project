@@ -22,8 +22,12 @@ const Header = ({ isMenuOpen, displayMenu, text }) => {
         },
         {
             name: linkNames[3],
-            target: 'footer'
+            target: 'projects'
         },
+        {
+            name: linkNames[4],
+            target: 'footer'
+        }
     ]
 
     const renderLinks = (links) => {

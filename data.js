@@ -1,6 +1,6 @@
 const en = {
     'header': {
-        links: ['Home', 'About', 'Skills', 'Contact']
+        links: ['Home', 'About', 'Skills', 'Projects', 'Contact']
     },
     'landing': {
         name: 'Rafael',
@@ -47,7 +47,7 @@ const en = {
 
 const pt = {
     'header': {
-        links: ['Home', 'Sobre', 'Estudos', 'Contato']
+        links: ['Home', 'Sobre', 'Estudos', 'Projetos', 'Contato']
     },
     'landing': {
         name: 'Rafael',
