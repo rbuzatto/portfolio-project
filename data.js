@@ -25,7 +25,7 @@ const en = {
         },
         paragraphs : [
             "Throughout this last year I've read articles, watched tutorial and did courses to sharp my knowledge. Most of my studies are based on Udemy courses.",
-            "I have to thank a lot to great instructors that delivered high quality content for professional development: Andrew Mead, Stephen Grider, Maximilian Schwarzmuller, Brad Traversy, Leonardo Leitao, Andrei Neagoie"
+            "I have to thank a lot to great instructors that delivered high quality content for professional development: Andrew Mead, Stephen Grider, Maximilian Schwarzmuller, Brad Traversy, Leonardo Leitao, Andrei Neagoie."
         ]
     },
     'projects': {
@@ -72,8 +72,8 @@ const pt = {
             secondText: 'Meus'
         },
         paragraphs : [
-            "Throughout this last year I've read articles, watched tutorial and did courses to sharp my knowledge. Most of my studies are based on Udemy courses.",
-            "I have to thank a lot to great instructors that delivered high quality content for professional development: Andrew Mead, Stephen Grider, Maximilian Schwarzmuller, Brad Traversy, Leonardo Leitao, Andrei Neagoie"
+            "Ao longo deste último ano Eu li diversos artigos, assisti tutoriais e realizei cursos para meu aprimoramento profissional. Maior parte de meus estudos foram realizados em cursos disponíveis na plataforma Udemy.",
+            "Agradeço especialmente aos excelentes instrutores que se dispuseram a dividir seu conhecimento em cursos de alta qualidade: Andrew Mead, Stephen Grider, Maximilian Schwarzmuller, Brad Traversy, Leonardo Leitao, Andrei Neagoie."
         ]
     },
     'projects': {
