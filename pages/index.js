@@ -38,7 +38,7 @@ class App extends Component{
             if(window.innerWidth < 620) {
                 this.trackScrollToSetOpenIntroBox()
             }
-            //todo: window resize!!
+            //on resize: verifies if boundary width is passed. if so trackScroll is invoked
             window.addEventListener('resize', () => {
                 if(window.innerWidth < 620 && !this.state.windowSmaller620px) {
                     this.trackScrollToSetOpenIntroBox()
@@ -77,6 +77,7 @@ class App extends Component{
             that.setIndexOfIntroOpened.call(that, mapScrollYs)
         }
 
+        // verifies if 'scroll' event listener should be added or not
         if(!track) {
             window.removeEventListener('scroll', setIndex)
             this.setState(() => ({windowSmaller620px : false}))

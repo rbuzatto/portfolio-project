@@ -55,9 +55,19 @@
 
     &__cta {
       position: absolute;
-      top: 40%;
-      right: 5%;
+      bottom: 20%;
+      right: 10%;
       transform: translate( 0 ,-50%);
+
+      @include responsiveFor($tablet) {
+        bottom: 20%;
+        right: 15%;
+      }
+
+      @include responsiveFor($tablet-lg) {
+        bottom: 22%;
+        right: 11%;
+      }
     }
 
     &__toggle-lg {

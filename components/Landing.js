@@ -29,14 +29,14 @@ const Landing = ({toggleLanguage, text}) => {
                 <h2 className="landing__subTitle">{text.subtitle}</h2>
             </div>
             
-            <div className="landing__cta btn">
+            <button className="landing__cta btn">
                 <div className="btn__slash">
                     <div className="btn btn--phantom">
                             <span className="btn__text btn__text--hidden">{text.cta}</span>
                     </div>
                 </div>
                 <span className="btn__text">{text.cta}</span>
-            </div>
+            </button>
         </section>
     )
 }
