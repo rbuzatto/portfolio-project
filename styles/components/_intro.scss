@@ -25,12 +25,9 @@
 
     &--open {
         background-color: transparent;
-
-        @include responsiveFor($tablet) {
-            background-color: white;
-            width: auto;
-            height: 0;
-        }
+        transform: scale(0);
+        // collapse intro, intro should not block the content behind
+        transition:  transform 0s ease-in .9s;
     }
 
 
@@ -153,40 +150,19 @@
         
     }
 
-    // below is checking scroll
+    // below animates on scroll
     &--open &__title--left {
         transform: rotate(-45deg);
         opacity: 0;
-
-        @include responsiveFor($tablet) {
-            transform: rotate(0deg);
-            opacity: 1;
-        }
     }
 
     &--open &__title--right {
         transform: rotate(45deg);
         opacity: 0;
-
-        @include responsiveFor($tablet) {
-            transform: rotate(0deg);
-            opacity: 1;
-        }
-    }
-
-    &--open &__wrapper--reverse &__title--right {
-        @include responsiveFor($tablet) {
-            transform: rotate(180deg);
-            opacity: 1;
-        }
     }
 
     &--open &__line {
         transform: scale(0);
-
-        @include responsiveFor($tablet) {
-            transform: scale(1);
-        }
     }
 
 }
