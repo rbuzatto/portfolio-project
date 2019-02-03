@@ -23,6 +23,7 @@ class App extends Component{
         this.setState(() => ({ lg: lg[e.target.value] }))
     } 
 
+    // if isMenuOpen changes, elements will translate properly
     displayMenu = () => {
         this.setState(({ isMenuOpen }) => ({ isMenuOpen : !isMenuOpen }))
     }
@@ -63,7 +64,8 @@ class App extends Component{
         })
         this.setIndexOfIntroOpened(mapScrollYs)
 
-        //bellow it is for setting a named function so it is removable from listener event
+        //bellow: we need a named function so it is removable from listener event
+        // we remove if window resizes to a width where 'scroll' event is no longer wanted to be listened
         const that = this
         function setIndex() {
             const intros = [...document.querySelectorAll('.intro')]
@@ -88,7 +90,10 @@ class App extends Component{
     }
 
     setIndexOfIntroOpened = (mapScrollYs) => {
+        // here we find if an element is on a frame where should be displayed, hence animating its intro child tag
         const openIntroIndex = mapScrollYs.findIndex(scrollY => window.scrollY > scrollY.top - window.innerHeight/2 && window.scrollY < scrollY.bottom - window.innerHeight/2)
+
+        // we check if the one found is different from the value from state
         if (openIntroIndex !== this.state.indexOfIntroOpened ) {
             this.setState(() => ({ indexOfIntroOpened: openIntroIndex }))
         }
