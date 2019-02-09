@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import _ from 'lodash'
 
 import '../styles/index.scss'
 import Head from 'next/head'
@@ -11,12 +12,25 @@ import Footer from '../components/Footer'
 import lg  from './../data'
 
 class App extends Component{ 
+
     state = {
         isMenuOpen: false,
         lg: lg.en,
         indexOfIntroOpened : -1,
-        windowSmaller620px: false
+        windowSmaller620px: false,
+        scrollY: 0
     }
+
+    constructor(props) {
+        super(props)
+        this.storeScrollY = _.throttle(this.storeScrollY.bind(this), 200)
+      }
+    
+      storeScrollY() {{
+          if(window.scrollY !== this.state.scrollY) 
+            this.setState(() => ({ scrollY: window.scrollY }))
+        }
+      }
     
     toggleLanguage = (e) => {
         e.persist()
@@ -33,6 +47,11 @@ class App extends Component{
         if(language) {
             this.setState(() => ({lg: lg[language]}))
         }
+
+        if(typeof(window) === 'undefined') { return }
+        this.storeScrollY()
+
+        window.addEventListener("scroll", this.storeScrollY)
 
         window.onload = () => {
 
@@ -52,6 +71,10 @@ class App extends Component{
             })
         }
     }
+
+    componentWillUnmount() {
+        window.removeEventListener("scroll", this.storeScrollY);
+      }
 
     trackScrollToSetOpenIntroBox = (track = true) => {
         const intros = [...document.querySelectorAll('.intro')]
@@ -102,7 +125,7 @@ class App extends Component{
 
     render() {
         const { lg } = this.state
-
+        
         return(
         <div>
             <Head>	  
