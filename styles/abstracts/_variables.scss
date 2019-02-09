@@ -4,11 +4,13 @@ $color-primary: hsl(179, 60%, 50%);
 $color-primary-dark: mix(black, $color-primary, 20%);
 $color-primary-darkest: mix(black, $color-primary, 40%);
 // @todo define better the palete
-$color-secondary: hsl(283, 60%, 50%);
-$color-secondary: hsl(34, 90%, 50%);
-$color-silver: hsl(203, 91%, 88%);
-$color-secondary-dark: mix(black, $color-secondary, 20%);
+$color-secondary        : hsl(283, 60%, 50%);
+$color-secondary        : hsl(34, 50%, 65%);
+$color-secondary-dark   : mix(black, $color-secondary, 20%);
 $color-secondary-darkest: mix(black, $color-secondary, 40%);
+
+$color-contact: hsl(332, 90%, 61%);
+$color-silver : hsl(203, 91%, 88%);
 
 
 $color-grey-lightest: hsl(0, 0%, 95%);
