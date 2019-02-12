@@ -85,14 +85,22 @@ $box-shadow-hover: 0 4px 8px hsl(181, 11%, 42%);
 }
 
 @each $option in $options {
+  $color: null;
+  @if $option == 'frontend' {
+    $color: $color-primary;
+  } @else {
+    $color: $color-secondary;
+  }
+
+
   .area__option[value=#{$option}]:checked ~ .cards--#{$option} {
     display: flex;
     flex-wrap: wrap;
   }
   
     .area__option[value=#{$option}]:checked ~ .area__labels .area__expertise[for=#{$option}] {
-    color: $color-primary;
+    color: $color;
     font-weight: 700;
-    border-left: 2px solid darken($color-primary, 10%);
+    border-left: 2px solid darken($color, 10%);
   }
 }
