@@ -85,6 +85,7 @@ $slash-border: 4px;
 
   &__option {
     cursor: pointer;
+    color: $color-font;
   }
 
   &__radio[value="pt"]:checked ~ &__box &__disk {
