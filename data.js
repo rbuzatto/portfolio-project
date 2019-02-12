@@ -76,7 +76,7 @@ const pt = {
             "Ao longo deste último ano Eu li diversos artigos, assisti tutoriais e realizei cursos para meu aprimoramento profissional. Maior parte de meus estudos foram realizados em cursos disponíveis na plataforma Udemy.",
             "Agradeço especialmente aos excelentes instrutores que se dispuseram a dividir seu conhecimento em cursos de alta qualidade: Andrew Mead, Stephen Grider, Maximilian Schwarzmuller, Brad Traversy, Leonardo Leitao, Andrei Neagoie."
         ],
-        heading : 'O que sei'
+        heading : 'Sabe sobre?'
     },
     'projects': {
         intro: {

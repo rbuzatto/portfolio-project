@@ -28,8 +28,21 @@
         color    : $font-nofocus;
         cursor   : pointer;
 
+        &:first-child {
+            font-weight: 500;
+            color    : $color-grey-lightest;
+        }
+
         &:hover {
             color: $font-highlight;
+        }
+
+        @include responsiveFor($tablet) {
+            padding  : $pad-text * 2;
+        }
+
+        @include responsiveFor($desktop) {
+            padding  : $pad-text * 3;
         }
     }
 
