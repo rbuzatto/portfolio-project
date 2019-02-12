@@ -92,6 +92,9 @@ class App extends Component{
         const that = this
         function setIndex() {
             const intros = [...document.querySelectorAll('.intro')]
+
+            // why add window.scrollY: so we get el position relative to the top, indepedent of the initial page scroll
+            // afterwards we use only window.scrollY to compare these values
             const mapScrollYs = intros.map(intro => {
             return {
                 top: intro.getBoundingClientRect().top + window.scrollY,
