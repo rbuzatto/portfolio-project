@@ -1,12 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-function withScrollPosition(WrappedComponent, offset = { px: 0, location: 'center' }) {
+function withScrollPosition(WrappedComponent, offset) {
+
+    const defaultOffset = { px: 0, location: "center" }
+    offset = { ...defaultOffset, ...offset }
 
     class withScrollPosition extends React.Component {
       constructor(props) {
         super(props)
-        this.wrap = React.createRef()
+        this.wrapped = React.createRef()
         this.state = {
           isFocus: false,
           top: 0,
@@ -16,8 +19,8 @@ function withScrollPosition(WrappedComponent, offset = { px: 0, location: 'cente
   
       componentDidMount() {
         if (typeof window !== "undefined") {
-            const elPosition = this.wrap.current.myRef.current.getBoundingClientRect()
-            const { scrollY } = this.props.windowData
+            const elPosition = this.wrapped.current.getBoundingClientRect()
+            const { scrollY } = window
 
             const top = elPosition.top + scrollY
             const bottom = elPosition.bottom + scrollY
@@ -32,16 +35,17 @@ function withScrollPosition(WrappedComponent, offset = { px: 0, location: 'cente
 
       componentDidUpdate() {
         const { top, bottom } = this.state
-        const { scrollY } = this.props.windowData
+        const { scrollY } = this.props
         let offsetValue = this.getOffsetValue()
 
         this.updateStateFocus(scrollY, top, bottom, offsetValue)
       }
 
       updateStateFocus = (scrollY, top, bottom, offsetValue) => {
-          if ( scrollY > top - offsetValue && 
-                scrollY < bottom - offsetValue
-            ) {
+        const isFocus = scrollY > top - offsetValue && scrollY < bottom - offsetValue
+
+        if (isFocus === this.state.isFocus) return
+          if (isFocus) {
                 this.setState(() => ({ isFocus: true }))
             } else {
                 this.setState(() => ({ isFocus: false }))
@@ -49,13 +53,15 @@ function withScrollPosition(WrappedComponent, offset = { px: 0, location: 'cente
       }
 
       getOffsetValue = () => {
-        const { innerHeight } = this.props.windowData
+        const { innerHeight } = window
 
         // offset location sets an offset from window where to consider element should receive prop isFocus true
         let offsetValue = 
             offset.location === 'top'
-                ? 0
-                : offset.location === 'bottom' ? innerHeight : innerHeight / 2
+              ? 0
+              : offset.location === 'bottom' 
+              ? innerHeight 
+              : innerHeight / 2
 
         offsetValue += offset.px
         return offsetValue
@@ -66,7 +72,7 @@ function withScrollPosition(WrappedComponent, offset = { px: 0, location: 'cente
           <WrappedComponent
             {...this.props}
             isFocus={this.state.isFocus}
-            ref={this.wrap}
+            ref={this.wrapped}
           />
         )
       }
@@ -77,11 +83,7 @@ function withScrollPosition(WrappedComponent, offset = { px: 0, location: 'cente
       )})`
 
       withScrollPosition.propTypes = {
-        windowData: PropTypes.shape({
-            scrollY: PropTypes.number.isRequired,
-            innerHeight: PropTypes.number.isRequired,
-            innerWidth: PropTypes.number.isRequired,
-        })
+        scrollY: PropTypes.number.isRequired,
     }
     
     return withScrollPosition
