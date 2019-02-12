@@ -32,7 +32,7 @@ const Header = ({ isMenuOpen, displayMenu, text }) => {
 
     const renderLinks = (links) => {
         return links.map((link, idx) => (  
-            <Link key={idx} className = "header__link" spy={true} smooth={true}  to={link.target}>{link.name}</Link>
+            <Link key={idx} className="header__link" spy={true} smooth={true}  to={link.target}>{link.name}</Link>
         ))
     }
 

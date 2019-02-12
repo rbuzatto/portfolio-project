@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import { Link } from 'react-scroll'
 
 import Stripes from './Stripes'
 
@@ -29,14 +30,14 @@ const Landing = ({toggleLanguage, text}) => {
                 <h2 className="landing__subTitle">{text.subtitle}</h2>
             </div>
             
-            <button className="landing__cta btn">
+            <Link className="landing__cta btn" spy={true} smooth={true}  to={'footer'}>
                 <div className="btn__slash">
                     <div className="btn btn--phantom">
                             <span className="btn__text btn__text--hidden">{text.cta}</span>
                     </div>
                 </div>
                 <span className="btn__text">{text.cta}</span>
-            </button>
+            </Link>
         </section>
     )
 }
