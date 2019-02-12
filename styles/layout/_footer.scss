@@ -20,6 +20,7 @@ $delay-to-step-4: $delay-to-step-3 + $time-step-three;
     margin-top: 4rem;
     width: 100vw;
     height: 25vh;
+    background: hsl(0, 0%, 92%);
 
     @include center;
     overflow: hidden;

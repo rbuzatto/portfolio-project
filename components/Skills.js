@@ -6,13 +6,13 @@ import { renderParagraphs } from '../utils/utils'
 import { frontend, backend } from '../icons/paths'
 
 const Skills = ({text, isIntroOpen}) => {
-    const { intro, paragraphs } = text
+    const { intro, paragraphs, heading } = text
 
     return (
         <section className="skills">
             <Intro {...intro} reverse={true} open={isIntroOpen} hue='210' />
             <div>
-                <h2 className="skills__title">What Do I Know?</h2>
+                <h2 className="skills__title">{ heading }</h2>
                 { renderParagraphs(paragraphs, 'skills__text') }
                 
                     <div className="area">
