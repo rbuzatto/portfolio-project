@@ -8,7 +8,8 @@ function withScrollPosition(WrappedComponent, offset) {
     const defaultOffset = { 
       px: 0, 
       location: "center", 
-      keepFocus: false // if true the prop isFocus will not go back to false 
+      keepFocus: false, // if true the prop isFocus will not go back to false
+      checkWidthOnResize: false
     }
 
     offset = { ...defaultOffset, ...offset }
@@ -40,7 +41,11 @@ function withScrollPosition(WrappedComponent, offset) {
       }
     }
 
-      componentDidUpdate() {
+      componentDidUpdate() {        
+        if (offset.keepFocus && this.state.isFocus) {
+          return
+        }
+        
         const { top, bottom } = this.state
         const { scrollY } = this.props
         let offsetValue = this.getOffsetValue()
@@ -55,9 +60,6 @@ function withScrollPosition(WrappedComponent, offset) {
           if (isFocus) {
                 this.setState(() => ({ isFocus: true }))
             } else {
-                if (offset.keepFocus) {
-                  return
-                }
                 this.setState(() => ({ isFocus: false }))
             }
       }
