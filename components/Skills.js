@@ -1,15 +1,16 @@
 import PropTypes from 'prop-types'
+import React from 'react'
 
+import withScrollPosition from './WithScrollPosition'
 import Intro from './Intro'
 import { renderParagraphs } from '../utils/utils'
 
 import { frontend, backend } from '../icons/paths'
 
-const Skills = ({text, isIntroOpen}) => {
+const Skills = React.forwardRef(function Skills({text, isIntroOpen, isFocus}, ref) {
     const { intro, paragraphs, heading } = text
-
     return (
-        <section className="skills">
+        <section className="skills" ref={ref}>
             <Intro {...intro} reverse={true} open={isIntroOpen} hue='210' />
             <div>
                 <h2 className="skills__title">{ heading }</h2>
@@ -24,21 +25,24 @@ const Skills = ({text, isIntroOpen}) => {
                         </div>
                 
                         <div className="cards cards--frontend">
-                            { frontend.map((path, idx) => (
-                                <div key={idx} className="card">
+                            { 
+                                frontend.map((path, idx) => (
+                                <div key={idx} className={`card ${isFocus ? 'card--show': ''}`}>
                                     <div className="zoomed"></div>
                                     { path }
                                 </div>
-                            )) }
+                                )) 
+                            }
                         </div>
                         
                         <div className="cards cards--backend">
-                            { backend.map((path, idx) => (
-                                <div key={idx} className="card">
+                            { 
+                                backend.map((path, idx) => (
+                                <div key={idx} className={`card ${isFocus ? 'card--show': ''}`}>
                                     <div className="zoomed"></div>
                                     { path }
                                 </div>
-                            )) 
+                                )) 
                             }
                         </div>
                     </div>
@@ -46,14 +50,16 @@ const Skills = ({text, isIntroOpen}) => {
 
         </section>
     )
-}
+})
+
 Skills.propTypes = {
     text: PropTypes.object.isRequired,
-    isIntroOpen: PropTypes.bool
+    isIntroOpen: PropTypes.bool,
+    isFocus: PropTypes.bool,
 }
 
 Skills.defaultProps = {
     isIntroOpen: false
 }
 
-export default Skills
+export default withScrollPosition(Skills, { keepFocus: true })

@@ -1,9 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+// fix top & bottom calc on resize
+
 function withScrollPosition(WrappedComponent, offset) {
 
-    const defaultOffset = { px: 0, location: "center" }
+    const defaultOffset = { 
+      px: 0, 
+      location: "center", 
+      keepFocus: false // if true the prop isFocus will not go back to false 
+    }
+
     offset = { ...defaultOffset, ...offset }
 
     class withScrollPosition extends React.Component {
@@ -48,6 +55,9 @@ function withScrollPosition(WrappedComponent, offset) {
           if (isFocus) {
                 this.setState(() => ({ isFocus: true }))
             } else {
+                if (offset.keepFocus) {
+                  return
+                }
                 this.setState(() => ({ isFocus: false }))
             }
       }

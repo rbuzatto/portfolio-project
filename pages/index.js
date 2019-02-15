@@ -151,6 +151,7 @@ class App extends Component{
                 <Skills     
                     text = {lg.skills}
                     isIntroOpen={this.state.indexOfIntroOpened === 1}
+                    scrollY={this.state.scrollY}
                 />
                 <Projects   
                     text = {lg.projects}

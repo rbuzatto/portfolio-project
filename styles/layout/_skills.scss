@@ -50,10 +50,30 @@ $box-shadow-hover: 0 4px 8px hsl(181, 11%, 42%);
   background: $radial-dark-blue;
   overflow  : hidden;
   cursor    : pointer;
-  transition: all .3s;
+
+  
+  transform: translateY(4rem);
+  opacity: 0;
+  // transition: all .3s;
   
   &:hover {
     box-shadow: $box-shadow-hover;
+  }
+
+  &--show {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@for $i from 1 through 10 {
+  $timeDelay:calc(((#{$i} - 1)*.05s));
+
+  .cards .card:nth-child(#{$i}) {
+    transition: 
+      box-shadow .3s,
+      transform .2s ease-out $timeDelay,
+      opacity .2s ease-out $timeDelay;
   }
 }
 
