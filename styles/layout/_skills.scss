@@ -68,12 +68,23 @@ $box-shadow-hover: 0 4px 8px hsl(181, 11%, 42%);
 
 @for $i from 1 through 10 {
   $timeDelay:calc(((#{$i} - 1)*.05s));
+  // we add a delay here for mob, cause intro component animates first
+  $timeDelayMob : calc(#{$timeDelay} + .5s);
 
   .cards .card:nth-child(#{$i}) {
-    transition: 
+      transition: 
+      box-shadow .3s,
+      transform .2s ease-out $timeDelayMob,
+      opacity .2s ease-out $timeDelayMob;
+  }
+
+  @include responsiveFor($tablet) {
+    .cards .card:nth-child(#{$i}) {
+      transition: 
       box-shadow .3s,
       transform .2s ease-out $timeDelay,
       opacity .2s ease-out $timeDelay;
+  }
   }
 }
 
