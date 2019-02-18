@@ -22,7 +22,10 @@ html {
     box-sizing: inherit; 
 }
 
-body { box-sizing: border-box; }
+body { 
+  box-sizing: border-box; 
+  background: hsl(200, 100%, 98%); 
+}
 
 /* width */
 ::-webkit-scrollbar {
