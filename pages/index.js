@@ -23,7 +23,7 @@ class App extends Component{
 
     constructor(props) {
         super(props)
-        this.storeScrollY = _.throttle(this.storeScrollY.bind(this), 200)
+        this.storeScrollY = _.throttle(this.storeScrollY.bind(this), 100)
       }
     
       storeScrollY() {{

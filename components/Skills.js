@@ -12,7 +12,7 @@ const Skills = React.forwardRef(function Skills({text, isIntroOpen, isFocus}, re
     return (
         <section className="skills" ref={ref}>
             <Intro {...intro} reverse={true} open={isIntroOpen} hue='210' />
-            <div>
+            <div className="skills__box">
                 <h2 className="skills__title">{ heading }</h2>
                 { renderParagraphs(paragraphs, 'skills__text') }
                 

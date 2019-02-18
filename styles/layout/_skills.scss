@@ -13,6 +13,7 @@ $box-shadow-hover: 0 4px 8px hsl(181, 11%, 42%);
   font-size     : 1.2rem;
   line-height   : 1;
   letter-spacing: 2px;
+  margin-top    : 4rem;
   
   &__option {
     visibility: hidden;
@@ -103,9 +104,13 @@ $box-shadow-hover: 0 4px 8px hsl(181, 11%, 42%);
   align-items    : center;
 }
 
-.card:hover .zoomed {
-  width: $zoom-radius;
-  height: $zoom-radius;
+// .card:hover .zoomed {
+//   width: $zoom-radius;
+//   height: $zoom-radius;
+// }
+
+.card:hover .area__logo {
+  filter: grayscale(0%);
 }
 
 .area__logo {
@@ -113,6 +118,8 @@ $box-shadow-hover: 0 4px 8px hsl(181, 11%, 42%);
   top     : 50%;
   left    : 50%;
   transform:translate(-50%, -50%);
+  transition: filter .2s ease-in-out;
+  filter: grayscale(85%);
 }
 
 @each $option in $options {

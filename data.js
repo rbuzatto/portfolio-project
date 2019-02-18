@@ -37,7 +37,7 @@ const en = {
         cases: [
             {
                 name: 'Canto do Saci',
-                desc: 'Brazilian Restaurant WebSite built in VanillaJS. Includes Google API for Geolocation.'
+                desc: 'Brazilian Restaurant WebSite built in VanillaJS. Responsive, it includes Gmaps API for routes, deployed with Firebase.'
             }
         ]
     },
@@ -86,7 +86,7 @@ const pt = {
         cases: [
             {
                 name: 'Canto do Saci',
-                desc: 'Projeto para restaurante construído em VanillaJS. Incluí Google API para rotas.'
+                desc: 'Projeto para restaurante construído em VanillaJS. Responsivo, inclui Gmaps API para rotas, implantado com Firebase.'
             }
         ]
     },
