@@ -42,6 +42,16 @@ class App extends Component{
         this.setState(({ isMenuOpen }) => ({ isMenuOpen : !isMenuOpen }))
     }
 
+    resize = () => {
+        if(window.innerWidth < 620 && !this.state.windowSmaller620px) {
+            this.trackScrollToSetOpenIntroBox()
+        }
+
+        if(window.innerWidth >= 620 && this.state.windowSmaller620px) {
+            this.trackScrollToSetOpenIntroBox(false)
+        }
+    }
+
     componentDidMount() {
         const language = localStorage.getItem('lg')
         if(language) {
@@ -59,21 +69,13 @@ class App extends Component{
                 this.trackScrollToSetOpenIntroBox()
             }
             //on resize: verifies if boundary width is passed. if so trackScroll is invoked
-            window.addEventListener('resize', () => {
-                if(window.innerWidth < 620 && !this.state.windowSmaller620px) {
-                    this.trackScrollToSetOpenIntroBox()
-                }
-
-                if(window.innerWidth >= 620 && this.state.windowSmaller620px) {
-                    this.trackScrollToSetOpenIntroBox(false)
-                }
-
-            })
+            window.addEventListener('resize', this.resize)
         }
     }
 
     componentWillUnmount() {
-        window.removeEventListener("scroll", this.storeScrollY);
+        window.removeEventListener('scroll', this.storeScrollY)
+        window.removeEventListener('resize', this.resize)
       }
 
     trackScrollToSetOpenIntroBox = (track = true) => {
