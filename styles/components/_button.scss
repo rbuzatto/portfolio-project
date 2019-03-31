@@ -19,6 +19,7 @@ $slash-border: 4px;
 .btn__text {
   text-transform: uppercase;
   letter-spacing: .5rem;
+  color         : $color-grey-dark;
   font-size     : $font-md;
   position      : absolute;
   top           : 50%;
@@ -85,7 +86,7 @@ $slash-border: 4px;
 
   &__option {
     cursor: pointer;
-    color: $color-font;
+    color: $color-grey-light;
   }
 
   &__radio[value="pt"]:checked ~ &__box &__disk {

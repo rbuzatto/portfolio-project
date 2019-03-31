@@ -1,5 +1,5 @@
 .landing {
-    height  : 60vh;
+    height  : 62vh;
     width   : 100vw;
     max-width: 100%;
     position: relative;
@@ -26,10 +26,9 @@
     }
 
     &::before {
-        background-image: url('/static/img/portfolio-no-glasses.jpeg');
-        background-size      : contain;
-        // background-size      : cover;
-        // background-position  : left 65% top -18rem;
+        background-image:  linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)) , url('/static/img/portfolio-no-glasses.jpeg');
+        background-size      : cover;
+        background-position  : left -0rem top -5.5rem;
         background-repeat    : no-repeat;
         background-attachment: fixed;
         filter: sepia(.6) grayscale(.4);
@@ -40,7 +39,7 @@
         }
 
         @include responsiveFor($tablet) {
-          background-image: url('/static/img/portfolio-horizontal.jpeg');
+          background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)) , url('/static/img/portfolio-horizontal.jpeg');
           background-position  : left 35%  top 0;
         }
 
@@ -61,7 +60,6 @@
         position      : absolute;
         bottom        : 5%;
         right         : 8%;
-        text-transform: uppercase;
         
         @include responsiveFor($desktop) {
           bottom        : 10%;
@@ -73,11 +71,14 @@
     &__subTitle {
         margin-top: 1rem;
         margin-left: .4rem;
+        color: $color-grey-lightest;
+        font-weight: 300;
+        letter-spacing: 2px;
     }
 
     &__cta {
       position: absolute;
-      bottom: 20%;
+      bottom: 17%;
       right: 10%;
       transform: translate( 0 ,-50%);
 
@@ -128,16 +129,15 @@
   top      : 0;
   left     : 0;
   transform: rotateY(180deg);
+  text-transform: uppercase;
 }
 
 .front-face {
-color: $color-grey-dark;
+  color: $color-primary;
+  -webkit-backface-visibility: hidden;
+  backface-visibility         : hidden;
+  z-index: 1;
 }
 .back-face {
-  -webkit-backface-visibility: hidden;
- backface-visibility         : hidden;
-  position: absolute;
-  top     : 0;
-  left    : 0;
-  color   : $color-primary;
+  color   : $color-grey-light;
 }
