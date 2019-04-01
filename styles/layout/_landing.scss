@@ -30,8 +30,11 @@
         background-size      : cover;
         background-position  : left -0rem top -5.5rem;
         background-repeat    : repeat-y;
-        background-attachment: fixed;
         filter: sepia(.6) grayscale(.4);
+
+        @media (hover: hover) {
+          background-attachment: fixed;
+        }
 
         @include responsiveFor($mobile-lg) {
           background-size      : cover;
