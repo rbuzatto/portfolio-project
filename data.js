@@ -63,9 +63,9 @@ const pt = {
             secondText: 'Mim'
         },
         paragraphs: [
-            'Olá, meu nome é Rafael Buzatto de Campos. Formado Engenheiro Civil, outrora professional de poker, agora contudo, desenvolvedor fullstack! Em frontend tenho base em React e Angular, enquanto que no backend, NodeJS.',
-            'Eu comecei minha jornada estudando Engenharia Civil na Unicamp. Logo após minha graduação Eu comecei uma carreira bem sucedida como jogador profissional de poker, onde passei 10 anos competindo contra alguns dos melhores jogadores do mundo.',
-            'Nos últimos dois anos mudei para uma nova carreira em desenvolvimento web, onde encontrei uma grande paixão. Começei em Java, e passei para Javascript onde aprendi ferramentas fantásticas, como React e Angular. Também aprecio trabalhar no backend, lidando com rotas e banco de dados, assim como autenticação de usuário.'
+            'Olá, meu nome é Rafael Buzatto de Campos. Formado engenheiro civil, outrora professional de poker, agora desenvolvedor fullstack! Base em React e Angular (frontend), e NodeJS (backend).',
+            'Comecei minha jornada cursando Engenharia Civil na Unicamp. Logo após minha graduação, iniciei uma carreira bem-sucedida como jogador profissional de poker, na qual passei dez anos competindo com alguns dos melhores jogadores do mundo.',
+            'Nos últimos dois anos, parti para uma nova carreira em desenvolvimento web, onde encontrei uma grande paixão. Comecei com Java e, em seguida, passei para Javascript, em que me familiarizei com ferramentas fantásticas, como React e Angular. Também aprecio trabalhar no backend, lidando com rotas e banco de dados, assim como autenticação de usuário.'
         ]
      
     },
@@ -75,12 +75,12 @@ const pt = {
             secondText: 'Meus'
         },
         paragraphs : [
-            "Ao longo deste últimos dois anos Eu li diversos artigos, assisti tutoriais e realizei cursos para meu aprimoramento profissional. Maior parte de meus estudos foram realizados em cursos disponíveis na plataforma Udemy.",
-            "No frontend tenho experiência React e Angular, com sólidos conhecimento em Javascipt e suas atualizações. Crio um design responsivo, com bundle otimizado, utlizando lazy loading, tree shaking, rotas protegidas com autenticação de usuário.",
-            "Do outro lado, meu backend é estruturado em torno de NodeJS, com experiência em Express, MongoDB & GraphQL, com algum conhecimento em databases SQL. Para devida autenticação, senhas são criptografadas (bcrpyt) com gerenciamento correto de token sem retorno de dados privados ao frontend.",
-            "Agradeço especialmente aos excelentes instrutores que se dispuseram a dividir seu conhecimento em cursos de alta qualidade: Andrew Mead, Stephen Grider, Maximilian Schwarzmuller, Brad Traversy, Leonardo Leitao, Andrei Neagoie."
+            "Ao longo destes últimos dois anos, li diversos artigos, assisti a tutoriais e realizei cursos para meu aprimoramento profissional. A maior parte de meus estudos foi realizada por meio de cursos disponíveis na plataforma Udemy.",
+            "No frontend, tenho experiência com React e Angular, com sólidos conhecimento em Javascript e suas atualizações. Crio designs responsivos, e com bundle otimizado; utilizo lazy loading, tree shaking e rotas protegidas com autenticação de usuário.",
+            "Do outro lado, meu backend é estruturado em torno de NodeJS, com experiência em Express, MongoDB & GraphQL; já tenho algum conhecimento em databases SQL. Para a devida autenticação, senhas são criptografadas (bcrpyt) com gerenciamento correto de token, sem retorno de dados privados ao frontend.",
+            "Agradeço especialmente aos excelentes instrutores que se dispuseram a dividir seu conhecimento em cursos de alta qualidade: Andrew Mead, Stephen Grider, Maximilian Schwarzmuller, Brad Traversy, Leonardo Leitão, Andrei Neagoie."
         ],
-        heading : 'Sei sobre?'
+        heading : 'Sei sobre...'
     },
     'projects': {
         intro: {
@@ -90,7 +90,7 @@ const pt = {
         cases: [
             {
                 name: 'Canto do Saci',
-                desc: 'Projeto para restaurante construído em VanillaJS. Responsivo, inclui Gmaps API para rotas, implantado com Firebase.'
+                desc: 'Projeto para o site do restaurante Canto do Saci. Construído em VanillaJS. Responsivo, inclui Gmaps API para rotas, implantado com Firebase.'
             }
         ]
     },

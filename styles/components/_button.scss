@@ -67,7 +67,7 @@ $slash-border: 4px;
   padding    : 2rem;
 
   &__disk {
-    background: gray;
+    background: $color-primary;
     @include circle(1rem);
     transform : translateX(0);
     transition: transform .1s ease-in;
@@ -78,7 +78,7 @@ $slash-border: 4px;
     width        : 2.5rem;
     height       : 1.4rem;
     padding      : .2rem;
-    border       : 1px solid gray;
+    border : 1px solid $color-primary;
     border-radius: 2rem;
     display      : flex;
     align-items  : center;
