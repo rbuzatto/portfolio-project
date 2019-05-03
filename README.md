@@ -2,4 +2,4 @@
 
 This is a project for a personal portfolio.
 
-It's is built up on NextJS. It features a language toggle option, where its chosen value is persisted with localStorage.
+It's built up on NextJS. It features language toggle option and animations on scroll.
